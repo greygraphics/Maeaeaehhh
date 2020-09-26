@@ -7,8 +7,9 @@ func get_size():
 
 func get_end():
 	var size = get_size()
-	return position.x + size / 2
+	var end = position.x + size
+	return end
 
 func set_start(start: float):
 	var size = get_size()
-	position.x = start + size / 2
+	position.x = start + size
