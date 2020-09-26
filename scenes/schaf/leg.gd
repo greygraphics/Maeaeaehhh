@@ -1,6 +1,6 @@
 extends CollisionShape2D
 
-#export var torque := 10000.0
+export var torque := 5000.0
 export var force := 200.0
 export var force_in_air = 10
 export var input : String = "ui_up"
@@ -36,9 +36,9 @@ func _physics_process(delta: float) -> void:
 		elif !result_left.empty() or !result_right.empty():
 			var result = result_left or result_right
 		if distance_to_obstacle != -1:
-			print(distance_to_obstacle)
-			#parent.add_torque(torque)
-			parent.apply_impulse(position, Vector2.UP.rotated(get_rot()) * force)
+			# print(distance_to_obstacle)
+			parent.apply_torque_impulse(Vector2.UP.rotated(get_rot()).angle_to(Vector2(0, 1)) * torque)
+			parent.apply_central_impulse(Vector2.UP.rotated(get_rot()) * force)
 		else:
 			parent.apply_impulse(position, Vector2.UP.rotated(get_rot()) * force_in_air)
 		
