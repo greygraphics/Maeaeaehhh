@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/schaf/leg.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="Leg1" type="CollisionShape2D"]
+position = Vector2( -0.200071, 73.0422 )
+shape = SubResource( 1 )
+script = ExtResource( 1 )

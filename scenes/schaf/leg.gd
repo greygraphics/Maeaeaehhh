@@ -1,9 +1,18 @@
-extends RigidBody2D
+extends Node2D
 
-
-export var distance := 50.0
-
+#export var torque := 10000.0
+export var force := 100.0
+export var input : String = "ui_up"
 
 func _physics_process(delta: float) -> void:
-	var stretch := Input.get_action_strength("ui_up")
-	$CollisionShape2D.position = Vector2.DOWN * stretch * distance
+	if Input.is_action_just_pressed(input):
+		var parent : RigidBody2D = get_parent().get_parent()
+		#parent.add_torque(torque)
+		parent.apply_impulse(position, Vector2.UP.rotated(get_rot()) * force)
+
+	if Input.is_action_just_released(input):
+		pass
+
+
+func get_rot():
+	return fmod(get_parent().get_parent().rotation + rotation, 2*PI)
