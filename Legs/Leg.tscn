@@ -10,3 +10,4 @@ height = 8.01503
 position = Vector2( -0.200071, 73.0422 )
 shape = SubResource( 1 )
 script = ExtResource( 1 )
+cooldown = 0.2
