@@ -2,12 +2,19 @@ extends Node2D
 
 
 func _ready():
+	$Username.text = Score.username
 	var score = Score.score
 	$Score.text = "Your Score: " + str(score)
 	$UsernameSubmit.connect("pressed", self, "submit_button")
+	$Back.connect("pressed", self, "play_again")
+	
+func play_again():
+	Score.score = 0
+	get_tree().change_scene("res://scenes/world.tscn")
 
 func submit_button():
 	var username = $Username.text
+	Score.username = username
 	
 	var http_request = HTTPRequest.new()
 	add_child(http_request)

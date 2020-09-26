@@ -8,7 +8,7 @@
 script = ExtResource( 1 )
 
 [node name="Schaf" parent="." instance=ExtResource( 3 )]
-position = Vector2( -90.1721, -223.925 )
+position = Vector2( 182.861, -223.925 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource( 2 )
