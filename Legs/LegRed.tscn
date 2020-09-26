@@ -4,10 +4,10 @@
 [ext_resource path="res://Legs/Leg.tscn" type="PackedScene" id=2]
 
 [node name="LegRed" type="Node2D"]
+rotation = -1.57079
 
 [node name="Leg1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 75, 0 )
-rotation = -1.5708
+position = Vector2( 0, 75 )
 input = "ui_right"
 
 [node name="Sprite" type="Sprite" parent="Leg1"]

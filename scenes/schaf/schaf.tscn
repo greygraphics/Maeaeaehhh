@@ -9,28 +9,30 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 88.7124
 
-[node name="Schaf" type="Node2D"]
-rotation = -0.0027391
-
-[node name="Body" type="RigidBody2D" parent="."]
+[node name="Schaf" type="RigidBody2D"]
 contacts_reported = 5
 
-[node name="MainCol" type="CollisionShape2D" parent="Body"]
+[node name="MainCol" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="LegBlue" parent="Body" instance=ExtResource( 2 )]
+[node name="LegBlue" parent="." instance=ExtResource( 2 )]
 position = Vector2( -0.462416, 1.54744 )
 
-[node name="LegGreen" parent="Body" instance=ExtResource( 4 )]
+[node name="LegGreen" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.205915, 1.21556 )
 
-[node name="LegRed" parent="Body" instance=ExtResource( 5 )]
+[node name="LegRed" parent="." instance=ExtResource( 5 )]
 position = Vector2( -0.125965, 0.547226 )
 
-[node name="LegYellow" parent="Body" instance=ExtResource( 3 )]
+[node name="LegYellow" parent="." instance=ExtResource( 3 )]
 position = Vector2( -0.123223, -0.453899 )
 
-[node name="Sprite" type="Sprite" parent="Body"]
+[node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.00108701, -0.396849 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
