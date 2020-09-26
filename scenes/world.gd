@@ -6,6 +6,7 @@ export var death_y = 200
 var end_offset = 100
 var chunk_types = [
 	preload("res://scenes/chunks/empty.tscn"),
+	preload("res://scenes/chunks/block.tscn"),
 	preload("res://scenes/chunks/hole.tscn")
 ]
 var back_types = [
