@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/schaf/schaf.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 88.7124
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="Schaf" type="Node2D"]
+script = ExtResource( 1 )
+distance = 300.0
+
+[node name="Body" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource( 1 )
+
+[node name="Leg" type="RigidBody2D" parent="."]
+position = Vector2( 111.432, -0.261765 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg"]
+shape = SubResource( 2 )
+
+[node name="LegPos" type="Position2D" parent="."]
+position = Vector2( 109.489, -1.07171 )
+
+[node name="GrooveJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2( 101.7, 3.08793 )
+rotation = -1.50796
+scale = Vector2( 1, 1 )
+damping = 0.07
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2( 111, 1.12246 )
+node_a = NodePath("../Body")
+node_b = NodePath("../Leg")
+softness = 5.75

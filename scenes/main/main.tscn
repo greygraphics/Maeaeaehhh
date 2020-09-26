@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/schaf/schaf.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -7.88275, 430.289, 385.745, 486.181, 779.372, 465.965, 1057.65, 386.288, 1258.62, 452.884, 1315.7, 671.698, 1030.29, 725.212, 441.637, 700.239, 107.47, 672.887, -9.07195, 530.182 )
+
+[node name="Schaf" parent="." instance=ExtResource( 1 )]
+position = Vector2( 407.043, 180.155 )
