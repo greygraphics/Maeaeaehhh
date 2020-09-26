@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://trees.png" type="Texture" id=1]
+[ext_resource path="res://scenes/back/parallax.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D" groups=[
+"back",
+]]
+z_index = -10
+script = ExtResource( 2 )
+factor = 0.2
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -478.522 )
+scale = Vector2( 0.885976, 0.885976 )
+texture = ExtResource( 1 )

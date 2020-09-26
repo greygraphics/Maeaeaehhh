@@ -6,6 +6,10 @@ var chunk_types = [
 	preload("res://scenes/chunks/empty.tscn"),
 	preload("res://scenes/chunks/hole.tscn")
 ]
+var back_types = [
+	preload("res://scenes/back/trees.tscn")
+]
+var next_back = 0
 
 func _ready():
 	add_chunk()
@@ -17,7 +21,17 @@ func _process(delta):
 	if $Camera.get_end() + end_offset > end:
 		add_chunk()
 	
+	if $Camera.get_end() + end_offset > next_back:
+		add_back()
+	
 	remove_left_chunks()
+	
+func add_back():
+	var back = get_random_back().instance()
+	var width = back.get_node("Sprite").texture.get_size().x
+	back.static_pos = next_back + width
+	add_child(back)
+	next_back = randi() % 500 + width + 100 + $Camera.get_end()
 
 func add_chunk():
 	var end = get_end()
@@ -50,3 +64,7 @@ func get_chunks():
 func get_random_chunk_type():
 	var i = randi() % chunk_types.size()
 	return chunk_types[i]
+	
+func get_random_back():
+	var i = randi() % back_types.size()
+	return back_types[i]
