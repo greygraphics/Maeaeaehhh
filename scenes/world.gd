@@ -1,6 +1,8 @@
 extends Node2D
 
 
+export var death_y = 200
+
 var end_offset = 100
 var chunk_types = [
 	preload("res://scenes/chunks/empty.tscn"),
@@ -24,8 +26,12 @@ func _process(delta):
 	if camera.get_end() + end_offset > next_back:
 		add_back()
 	
-	remove_left_chunks()
-	
+	if $Schaf.position.y > death_y:
+		die()
+		
+func die():
+	get_tree().change_scene("res://scenes/gameover.tscn")
+
 func add_back():
 	var back = get_random_back().instance()
 	var width = back.get_node("Sprite").texture.get_size().x
@@ -39,10 +45,6 @@ func add_chunk():
 	var chunk = get_random_chunk_type().instance()
 	chunk.set_start(end)
 	add_child(chunk)
-	
-func remove_left_chunks():
-	# TODO
-	pass
 
 func get_end():
 	var existing = get_chunks()
