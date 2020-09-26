@@ -85,3 +85,13 @@ margin_bottom = 282.484
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Back" type="Button" parent="."]
+margin_left = 447.444
+margin_top = 494.071
+margin_right = 590.444
+margin_bottom = 549.071
+text = "Play Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
