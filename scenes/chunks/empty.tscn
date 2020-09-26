@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/chunk.gd" type="Script" id=1]
 [ext_resource path="res://chunk.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 321, 131 )
+extents = Vector2( 319.966, 129.985 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 318.324, 130.005 )
 
 [node name="Chunk" type="Node2D" groups=[
 "chunk",
@@ -13,10 +16,15 @@ script = ExtResource( 1 )
 
 [node name="Body" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+[node name="HitBox" type="CollisionShape2D" parent="Body"]
 position = Vector2( 0, 130 )
 shape = SubResource( 1 )
 
+[node name="Ground" type="CollisionShape2D" parent="Body"]
+position = Vector2( 0, 130 )
+shape = SubResource( 2 )
+disabled = true
+
 [node name="Sprite" type="Sprite" parent="Body"]
-position = Vector2( 0, 114 )
+position = Vector2( 0, 114.688 )
 texture = ExtResource( 2 )

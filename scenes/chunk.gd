@@ -2,7 +2,7 @@ extends Node2D
 
 
 func get_size():
-	var shape = get_node("Body/CollisionShape2D").shape
+	var shape = get_node("Body/Ground").shape
 	return shape.extents.x
 
 func get_end():
