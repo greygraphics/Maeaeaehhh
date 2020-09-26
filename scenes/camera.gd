@@ -1,8 +1,8 @@
-extends Camera2D
+extends Node2D
 
 
-func _process(delta):
-	position.x += delta * 100
+#func _process(delta):
+#	position.x += delta * 100
 
 func get_size():
 	return get_viewport().size.x

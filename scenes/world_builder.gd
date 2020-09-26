@@ -11,17 +11,17 @@ var back_types = [
 ]
 var next_back = 0
 
+onready var camera = $Schaf # historisch gewachsen
+
 func _ready():
-	add_chunk()
 	add_chunk()
 
 func _process(delta):
 	var end = get_end()
-	
-	if $Camera.get_end() + end_offset > end:
+	if camera.get_end() + end_offset > end:
 		add_chunk()
 	
-	if $Camera.get_end() + end_offset > next_back:
+	if camera.get_end() + end_offset > next_back:
 		add_back()
 	
 	remove_left_chunks()
@@ -31,7 +31,7 @@ func add_back():
 	var width = back.get_node("Sprite").texture.get_size().x
 	back.static_pos = next_back + width
 	add_child(back)
-	next_back = randi() % 500 + width + 100 + $Camera.get_end()
+	next_back = randi() % 500 + width + 100 + camera.get_end()
 
 func add_chunk():
 	var end = get_end()
