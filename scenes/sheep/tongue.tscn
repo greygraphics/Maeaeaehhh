@@ -1,7 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/tongue.png" type="Texture" id=1]
-[ext_resource path="res://scenes/schaf/tongue.gd" type="Script" id=2]
+[ext_resource path="res://assets/sheep/tongue.png" type="Texture" id=1]
+[ext_resource path="res://scripts/sheep/tongue.gd" type="Script" id=2]
+
+
+
+
+
+
 
 [node name="Tongue" type="Node2D"]
 script = ExtResource( 2 )

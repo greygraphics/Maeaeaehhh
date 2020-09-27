@@ -31,7 +31,7 @@ func _process(delta):
 		die()
 		
 func die():
-	get_tree().change_scene("res://scenes/gameover.tscn")
+	get_tree().change_scene("res://scenes/menus/gameover.tscn")
 
 func add_back():
 	var back = get_random_back().instance()

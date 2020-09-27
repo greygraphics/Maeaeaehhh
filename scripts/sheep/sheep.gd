@@ -29,7 +29,7 @@ func _physics_process(delta):
 		_last_usage = OS.get_ticks_msec()/1000
 		var multiplier = (min(((OS.get_ticks_msec()/1000.0 - _charge_start) / charge_time), 1)) * max_multiplier + 1
 		_charge_start = -1
-		var particles : Particles2D = preload("res://fart_particles.tscn").instance()
+		var particles : Particles2D = preload("res://scenes/sheep/fart_particles.tscn").instance()
 		particles.position.x = $MainCol.shape.radius
 		particles.amount *= multiplier
 		self.add_child(particles)
