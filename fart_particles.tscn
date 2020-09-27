@@ -20,6 +20,7 @@ scale_random = 0.06
 color_ramp = SubResource( 2 )
 
 [node name="fart_particles" type="Particles2D"]
+emitting = false
 amount = 30
 one_shot = true
 explosiveness = 1.0
