@@ -21,6 +21,14 @@ export var cooldown = 3
 var _last_usage = -cooldown
 var _charge_start
 
+# roll stuff
+export var base_roll = 100
+export var roll_charge_time = 2
+export var roll_max_multiplier = 2 - 1
+export var roll_cooldown = 4
+var _roll_last_usage = -roll_cooldown
+var _roll_charge_start
+
 func _physics_process(delta):
 	if Input.is_action_just_pressed("fart") && _last_usage + cooldown < OS.get_ticks_msec()/1000:
 		_charge_start = OS.get_ticks_msec()/1000.0
@@ -38,3 +46,12 @@ func _physics_process(delta):
 		#particles.rotation = rotation #+ 3/8 * PI
 		
 		self.apply_central_impulse(direction * base_boost * multiplier)
+	
+	if Input.is_action_just_pressed("roll"):
+		_roll_charge_start = OS.get_ticks_msec() / 1000.0
+	if Input.is_action_just_released("roll"):
+		_roll_last_usage = OS.get_ticks_msec()/1000
+		var multiplier = (min(((OS.get_ticks_msec()/1000.0 - _roll_charge_start) / roll_charge_time), 1)) * roll_max_multiplier + 1
+		_roll_charge_start = -1
+		apply_torque_impulse(base_roll * multiplier * 1000)
+		apply_central_impulse(Vector2.UP * 100)
