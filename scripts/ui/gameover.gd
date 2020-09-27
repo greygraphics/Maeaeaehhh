@@ -61,3 +61,7 @@ func submit_button():
 	$Others.show()
 	$Highscores.show()
 	$Highscores.text = out_str
+
+
+func _on_Username_text_entered(new_text: String) -> void:
+	submit_button()
