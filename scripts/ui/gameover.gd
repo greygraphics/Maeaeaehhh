@@ -5,8 +5,7 @@ func _ready():
 	$Username.text = Score.username
 	var score = Score.score
 	$Score.text = "Your Score: " + str(score)
-	$UsernameSubmit.connect("pressed", self, "submit_button")
-	$Back.connect("pressed", self, "play_again")
+
 	
 func play_again():
 	Score.score = 0
@@ -61,3 +60,7 @@ func submit_button():
 	$Others.show()
 	$Highscores.show()
 	$Highscores.text = out_str
+
+
+func _on_Username_text_entered(new_text: String) -> void:
+	submit_button()

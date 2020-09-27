@@ -2,10 +2,6 @@
 
 [ext_resource path="res://scripts/ui/gameover.gd" type="Script" id=1]
 
-
-
-
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -61,7 +57,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Username" type="TextEdit" parent="."]
+[node name="Username" type="LineEdit" parent="."]
 margin_left = 516.357
 margin_top = 239.44
 margin_right = 726.357
@@ -99,3 +95,6 @@ text = "Play Again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="text_entered" from="Username" to="." method="_on_Username_text_entered"]
+[connection signal="pressed" from="UsernameSubmit" to="." method="submit_button"]
+[connection signal="pressed" from="Back" to="." method="play_again"]

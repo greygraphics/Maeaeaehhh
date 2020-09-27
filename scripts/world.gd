@@ -7,10 +7,12 @@ var end_offset = 100
 var chunk_types = [
 	preload("res://scenes/chunks/empty.tscn"),
 	preload("res://scenes/chunks/block.tscn"),
-	preload("res://scenes/chunks/hole.tscn")
+	preload("res://scenes/chunks/hole.tscn"),
+	preload("res://scenes/chunks/wall.tscn")
 ]
 var back_types = [
-	preload("res://scenes/back/trees.tscn")
+	preload("res://scenes/back/trees.tscn"),
+	preload("res://scenes/back/lampHPI.tscn")
 ]
 var next_back = 0
 
@@ -42,7 +44,6 @@ func add_back():
 
 func add_chunk():
 	var end = get_end()
-	
 	var chunk = get_random_chunk_type().instance()
 	chunk.set_start(end)
 	add_child(chunk)

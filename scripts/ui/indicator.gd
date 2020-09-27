@@ -21,12 +21,16 @@ func move_towards(pos):
 
 func set_active(status):
 	$Ready.color.a = 150.0/255.0 if status else 50.0/255.0
-	$Border.invert_border = 4 if status else 2
+	$Border.invert_border = 6 if status else 3
 
 func ready_progress(percentage):
 	percentage = clamp(percentage, 0.0, 1.0)
 	$Ready.scale.y = percentage
 	$Ready.position.y = (1.0 - percentage) * 32.0
+	if percentage == 1.0:
+		$Border.color.a = 1.0
+	else:
+		$Border.color.a = 0.3
 	
 func charge_progress(percentage):
 	percentage = clamp(percentage, 0.0, 1.0)
