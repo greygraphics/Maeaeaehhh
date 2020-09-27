@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://assets/sheep/sounds/Hit 3.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/sheep/sounds/Hit 2.wav" type="AudioStream" id=2]
+[ext_resource path="res://scripts/resources/sound_effect_list.gd" type="Script" id=3]
+[ext_resource path="res://assets/sheep/sounds/Hit 1.wav" type="AudioStream" id=4]
+
+[resource]
+script = ExtResource( 3 )
+sounds = [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ]
