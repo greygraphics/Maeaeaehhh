@@ -67,7 +67,7 @@ func _process(delta):
 	
 	if _roll_charge_start == -1:
 		var percentage = min((OS.get_ticks_msec()/1000.0 - _roll_last_usage) / roll_cooldown, 1.0)
-		_indicator.ready_progress(percentage)
+		_roll_indicator.ready_progress(percentage)
 	else:
 		var percentage = min(((OS.get_ticks_msec()/1000.0 - _roll_charge_start) / roll_charge_time), 1)
 		_roll_indicator.charge_progress(percentage)
@@ -97,6 +97,7 @@ func _physics_process(delta):
 		_roll_last_usage = OS.get_ticks_msec()/1000
 		var multiplier = (min(((OS.get_ticks_msec()/1000.0 - _roll_charge_start) / roll_charge_time), 1)) * roll_max_multiplier + 1
 		_roll_charge_start = -1
+		_roll_indicator.charge_progress(0)
 		apply_torque_impulse(base_roll * multiplier)
 		apply_central_impulse(Vector2.UP * 100)
 
