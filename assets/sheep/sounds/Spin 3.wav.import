@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Spin 3.wav-cea12a81b3f6e288fef5460bdd321b07.sample"
+
+[deps]
+
+source_file="res://assets/sheep/sounds/Spin 3.wav"
+dest_files=[ "res://.import/Spin 3.wav-cea12a81b3f6e288fef5460bdd321b07.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

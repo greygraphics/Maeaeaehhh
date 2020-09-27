@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Furz 3.wav-96d21d691858e394d988e5a0beb0db62.sample"
+
+[deps]
+
+source_file="res://assets/sheep/sounds/Furz 3.wav"
+dest_files=[ "res://.import/Furz 3.wav-96d21d691858e394d988e5a0beb0db62.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
