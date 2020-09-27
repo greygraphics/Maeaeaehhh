@@ -7,10 +7,12 @@ var end_offset = 100
 var chunk_types = [
 	preload("res://scenes/chunks/empty.tscn"),
 	preload("res://scenes/chunks/block.tscn"),
-	preload("res://scenes/chunks/hole.tscn")
+	preload("res://scenes/chunks/hole.tscn"),
+	preload("res://scenes/chunks/wall.tscn")
 ]
 var back_types = [
-	preload("res://scenes/back/trees.tscn")
+	preload("res://scenes/back/trees.tscn"),
+	preload("res://scenes/back/lampHPI.tscn")
 ]
 var next_back = 0
 
