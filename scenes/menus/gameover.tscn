@@ -63,6 +63,9 @@ margin_top = 239.44
 margin_right = 726.357
 margin_bottom = 279.44
 text = "Username"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="UsernameLabel" type="RichTextLabel" parent="."]
 margin_left = 420.018
@@ -93,3 +96,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="text_entered" from="Username" to="." method="_on_Username_text_entered"]
+[connection signal="pressed" from="UsernameSubmit" to="." method="submit_button"]
+[connection signal="pressed" from="Back" to="." method="play_again"]
