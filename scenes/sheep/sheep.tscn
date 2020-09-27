@@ -16,6 +16,8 @@ radius = 88.7124
 gravity_scale = 1.5
 contacts_reported = 5
 script = ExtResource( 6 )
+indicator_color = Color( 0.792157, 0.498039, 0, 1 )
+roll_indicator_color = Color( 0, 0.788235, 1, 1 )
 
 [node name="MainCol" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

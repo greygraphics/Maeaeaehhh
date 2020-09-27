@@ -24,6 +24,15 @@ func set_active(status):
 	$Border.invert_border = 4 if status else 2
 
 func ready_progress(percentage):
+	percentage = clamp(percentage, 0.0, 1.0)
 	$Ready.scale.y = percentage
 	$Ready.position.y = (1.0 - percentage) * 32.0
 	
+func charge_progress(percentage):
+	percentage = clamp(percentage, 0.0, 1.0)
+	if !$Charge.visible:
+		$Charge.visible = true
+	$Charge.scale.y = percentage
+	$Charge.position.y = (1.0 - percentage) * 32.0
+	if percentage == 1.0:
+		_prev_pos += Vector2(rand_range(-5.0, 5.0), rand_range(-5.0, 5.0))
