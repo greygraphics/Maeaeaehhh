@@ -2,15 +2,12 @@
 
 [ext_resource path="res://scripts/sheep/leg.gd" type="Script" id=1]
 
-
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 18.5381
 height = 8.01503
 
 [node name="Leg1" type="CollisionShape2D"]
-position = Vector2( -0.200071, 73.0422 )
+position = Vector2( 0, 48 )
 shape = SubResource( 1 )
 script = ExtResource( 1 )
 force = 300.0

@@ -29,9 +29,12 @@ func _physics_process(delta):
 		_last_usage = OS.get_ticks_msec()/1000
 		var multiplier = (min(((OS.get_ticks_msec()/1000.0 - _charge_start) / charge_time), 1)) * max_multiplier + 1
 		_charge_start = -1
-		var particles : Particles2D = preload("res://scenes/sheep/fart_particles.tscn").instance()
-		particles.position.x = $MainCol.shape.radius
-		particles.amount *= multiplier
-		self.add_child(particles)
 		
-		self.apply_central_impulse(Vector2.LEFT.rotated(rotation) * base_boost * multiplier)
+		var direction = Vector2.RIGHT.rotated(rotation - PI/8).normalized() # bottom left
+		var particles : Particles2D = preload("res://scenes/sheep/fart_particles.tscn").instance()
+		particles.amount *= multiplier
+		particles.position = - direction * $MainCol.shape.radius
+		self.add_child(particles)
+		#particles.rotation = rotation #+ 3/8 * PI
+		
+		self.apply_central_impulse(direction * base_boost * multiplier)
