@@ -44,7 +44,6 @@ func add_back():
 
 func add_chunk():
 	var end = get_end()
-	
 	var chunk = get_random_chunk_type().instance()
 	chunk.set_start(end)
 	add_child(chunk)
