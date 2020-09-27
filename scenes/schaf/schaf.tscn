@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sheep.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Tongue.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/camera.gd" type="Script" id=6]
 [ext_resource path="res://Legs/Leg.tscn" type="PackedScene" id=7]
 
@@ -12,6 +13,10 @@ radius = 88.7124
 gravity_scale = 1.5
 contacts_reported = 5
 script = ExtResource( 6 )
+
+[node name="Tongue" parent="." instance=ExtResource( 3 )]
+position = Vector2( 53.8782, -61.1742 )
+rotation = -2.35619
 
 [node name="MainCol" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -59,9 +64,3 @@ input = "ui_right"
 [node name="Sprite" type="Sprite" parent="LegYellow"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
-
-[node name="Tongue" type="DampedSpringJoint2D" parent="."]
-position = Vector2( 66.1459, -62.9961 )
-rotation = 3.92699
-node_a = NodePath("..")
-length = 250.0
