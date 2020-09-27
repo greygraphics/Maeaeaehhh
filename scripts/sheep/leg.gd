@@ -1,4 +1,6 @@
 extends CollisionShape2D
+signal pressed
+
 
 export var torque := 5000.0
 export var force := 200.0
@@ -35,6 +37,7 @@ func _process(delta): # update indicator
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(input) && _last_usage + cooldown < OS.get_ticks_msec()/1000:
+		emit_signal("pressed")
 		_last_usage = OS.get_ticks_msec()/1000
 		_is_active = true
 		_indicator.set_active(true)

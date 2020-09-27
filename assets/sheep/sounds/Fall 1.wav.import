@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fall 1.wav-b99d36e24fb007e2f14dd89d4695d8a6.sample"
+
+[deps]
+
+source_file="res://assets/sheep/sounds/Fall 1.wav"
+dest_files=[ "res://.import/Fall 1.wav-b99d36e24fb007e2f14dd89d4695d8a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

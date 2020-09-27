@@ -1,10 +1,16 @@
 extends Node2D
 
 
+export var sound_list : Resource
+
+
 func _ready():
 	$Username.text = Score.username
 	var score = Score.score
 	$Score.text = "Your Score: " + str(score)
+	var sound := sound_list.sounds[randi() % sound_list.sounds.size()] as AudioStream
+	$AudioStreamPlayer.stream = sound
+	$AudioStreamPlayer.play()
 
 	
 func play_again():

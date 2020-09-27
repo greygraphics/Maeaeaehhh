@@ -38,6 +38,11 @@ var _roll_indicator: Node2D
 export var roll_indicator_image: Texture
 export var roll_indicator_color: Color
 
+
+# Hit sounds
+onready var _hit_sound := $HitSound
+
+
 func _ready():
 	_indicator = preload("res://scenes/menus/Indicator.tscn").instance()
 	self.add_child(_indicator)
@@ -90,6 +95,7 @@ func _physics_process(delta):
 		#particles.rotation = rotation #+ 3/8 * PI
 		
 		self.apply_central_impulse(direction * base_boost * multiplier)
+		$FartSound.play_effect()
 	
 	if Input.is_action_just_pressed("roll") && _roll_last_usage + roll_cooldown < OS.get_ticks_msec()/1000.0:
 		_roll_charge_start = OS.get_ticks_msec() / 1000.0
@@ -100,7 +106,16 @@ func _physics_process(delta):
 		_roll_indicator.charge_progress(0)
 		apply_torque_impulse(base_roll * multiplier)
 		apply_central_impulse(Vector2.UP * 100)
+		$RollSound.play_effect()
 
 
 func target_indicator_position(angle):
 	return global_position + Vector2.LEFT.rotated(rotation - angle).normalized() * ($MainCol.shape.radius + 100) # bottom left
+
+
+func _on_Schaf_body_entered(body: Node) -> void:
+	$HitSound.play_effect()
+
+
+func _on_leg_pressed() -> void:
+	$"MähSound".play_effect()
