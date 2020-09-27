@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/ui/arrow_left.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/arrow_right.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/f_char.png" type="Texture" id=10]
-[ext_resource path="res://scripts/sheep/sound_effect.gd" type="Script" id=11]
+[ext_resource path="res://scripts/sheep/sound_effect_player.gd" type="Script" id=11]
 [ext_resource path="res://assets/sheep/sounds/lists/hit.sfx.tres" type="Resource" id=12]
 [ext_resource path="res://assets/sheep/sounds/lists/fart.sfx.tres" type="Resource" id=13]
 [ext_resource path="res://assets/sheep/sounds/lists/spin.sfx.tres" type="Resource" id=14]
@@ -87,27 +87,19 @@ position = Vector2( 3.08992e-05, 32 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
-[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
-attenuation = 0.217638
-bus = "Hit"
+[node name="HitSound" type="Node2D" parent="."]
 script = ExtResource( 11 )
 sound_effect_list = ExtResource( 12 )
 
-[node name="FartSound" type="AudioStreamPlayer2D" parent="."]
-attenuation = 0.138696
-bus = "Fart"
+[node name="FartSound" type="Node2D" parent="."]
 script = ExtResource( 11 )
 sound_effect_list = ExtResource( 13 )
 
-[node name="RollSound" type="AudioStreamPlayer2D" parent="."]
-attenuation = 0.170755
-bus = "Mäh"
+[node name="RollSound" type="Node2D" parent="."]
 script = ExtResource( 11 )
 sound_effect_list = ExtResource( 14 )
 
-[node name="MähSound" type="AudioStreamPlayer2D" parent="."]
-attenuation = 0.170755
-bus = "Mäh"
+[node name="MähSound" type="Node2D" parent="."]
 script = ExtResource( 11 )
 sound_effect_list = ExtResource( 15 )
 [connection signal="body_entered" from="." to="." method="_on_Schaf_body_entered"]
