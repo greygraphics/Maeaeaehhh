@@ -73,11 +73,11 @@ func _process(delta):
 		_roll_indicator.charge_progress(percentage)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("fart") && _last_usage + cooldown < OS.get_ticks_msec()/1000:
+	if Input.is_action_just_pressed("fart") && _last_usage + cooldown < OS.get_ticks_msec()/1000.0:
 		_charge_start = OS.get_ticks_msec()/1000.0
 	
 	if Input.is_action_just_released("fart") && _charge_start != -1:
-		_last_usage = OS.get_ticks_msec()/1000
+		_last_usage = OS.get_ticks_msec()/1000.0
 		var multiplier = (min(((OS.get_ticks_msec()/1000.0 - _charge_start) / charge_time), 1)) * max_multiplier + 1
 		_charge_start = -1
 		_indicator.charge_progress(0)
@@ -91,10 +91,10 @@ func _physics_process(delta):
 		
 		self.apply_central_impulse(direction * base_boost * multiplier)
 	
-	if Input.is_action_just_pressed("roll") && _roll_last_usage + roll_cooldown < OS.get_ticks_msec()/1000:
+	if Input.is_action_just_pressed("roll") && _roll_last_usage + roll_cooldown < OS.get_ticks_msec()/1000.0:
 		_roll_charge_start = OS.get_ticks_msec() / 1000.0
 	if Input.is_action_just_released("roll") &&  _roll_charge_start != -1:
-		_roll_last_usage = OS.get_ticks_msec()/1000
+		_roll_last_usage = OS.get_ticks_msec()/1000.0
 		var multiplier = (min(((OS.get_ticks_msec()/1000.0 - _roll_charge_start) / roll_charge_time), 1)) * roll_max_multiplier + 1
 		_roll_charge_start = -1
 		_roll_indicator.charge_progress(0)
