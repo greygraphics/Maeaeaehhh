@@ -7,10 +7,10 @@ func get_size():
 	return get_viewport().size.x
 
 func get_end():
-	return position.x + get_size() / 2
+	return global_position.x + get_size() / 2
 
 func get_start():
-	return position.x - get_size() / 2
+	return global_position.x - get_size() / 2
 
 # fart stuff
 

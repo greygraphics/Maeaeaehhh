@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/back/lampHPI.png" type="Texture" id=1]
+[ext_resource path="res://scripts/parallax.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D" groups=[
+"back",
+]]
+z_index = -10
+script = ExtResource( 2 )
+factor = 0.2
+
+[node name="Sprite" type="Sprite" parent="." groups=[
+"back",
+]]
+position = Vector2( 0.996338, -310.22 )
+scale = Vector2( 0.6, 0.7 )
+texture = ExtResource( 1 )
